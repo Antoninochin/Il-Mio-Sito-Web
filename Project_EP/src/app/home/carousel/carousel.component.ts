@@ -12,7 +12,7 @@ export class CarouselComponent implements OnInit {
 	// let like = document.getElementsByClassName('bttn') as HTMLCollectionOf<HTMLElement>;
   gameList:any
   
-  constructor(private gameService: GamesService) { }
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
     // this.gameService.getGamesAll().subscribe(
@@ -31,7 +31,7 @@ export class CarouselComponent implements OnInit {
       'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
       'X-RapidAPI-Key': '303df10c14msh14901127afe3b8bp121776jsnd0ba57cd245c',
     });
-    this.gameService.getGamesAll('https://rawg-video-games-database.p.rapidapi.com/games.json', {
+    this.gamesService.getGamesAll('https://rawg-video-games-database.p.rapidapi.com/games.json', {
       headers: headers
     })
     .subscribe(data => { console.log(data)})

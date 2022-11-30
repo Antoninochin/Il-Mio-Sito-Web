@@ -13,10 +13,8 @@ export class GamesService {
   // getGamesAll(): Observable<any>{
   //   return this.http.get(this.url)
   // }
-
-
-   getGamesAll(url:string, {}){
-   return this.http.get(url, {})
+   getGamesAll(url:string, body: {}){
+   return this.http.get(url, body)
 }
   }
 
