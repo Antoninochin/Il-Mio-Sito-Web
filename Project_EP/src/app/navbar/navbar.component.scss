@@ -1,0 +1,37 @@
+div img{
+    height: 65px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.bi-fire{
+    font-size: 30px;
+    margin-left: 30px;
+    color: red;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color:white;
+    text-decoration:underline;
+}
+.box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 20%, rgba(251,175,9,1) 50%, rgba(251,28,45,1) 76%);
+}
+.btn{
+    border: none;
+}
+.btn:hover{
+    background: blue;
+    color: white;
+}
+//  @media screen and (min-width:731px)  {
+//     .navbar,
+//     .search{
+//         display: none;
+//     }
+//  }

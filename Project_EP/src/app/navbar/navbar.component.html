@@ -1,0 +1,21 @@
+
+<div class="box navbar" ngbNav #nav="ngbNav" class="nav-tabs box">
+    <div>
+		<img src="../../assets/img/MioLogo.png" alt="Logo">
+		<a [routerLink]="['picsum-img-wrapper']" ><i class="bi bi-fire"></i></a>
+	</div>
+	<form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search">
+        <button class="btn" type="submit">Search</button>
+      </form>
+	<div ngbNavItem>
+		<a [routerLink]="['/']" routerLinkActive="active"><i class="bi bi-house-fill"></i> Home</a>
+	</div>
+	<div ngbNavItem>
+		<a [routerLink]="['login']"><i class="bi bi-person-fill"></i> Login</a>
+	</div>
+	<div ngbNavItem>
+		<a [routerLink]="['sign-Up']"><i class="bi bi-pencil-square"></i> Register</a>
+	</div>
+</div>
+
