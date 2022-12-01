@@ -1,14 +1,144 @@
 <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
 <ngb-carousel>
-	<ng-template ngbSlide>
+	<ng-template ngbSlide *ngFor="let game of games">
+		<div class="box">
+			<div>
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+				<div>
+					<h3>{{game.name}}</h3>
+					<p>Rilasciato il: {{game.released}}.</p>
+					<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+					<button class="bttn"><i class="bi bi-info-circle"></i></button>
+					<button class="bttn"><i class="bi bi-cart4"></i></button>
+				</div>
+			</div>
+			<div>
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+			<div>
+				<h3>{{game.name}}</h3>
+				<p>Rilasciato il: {{game.released}}</p>
+				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button class="bttn"><i class="bi bi-cart4"></i></button>
+			</div>
+			</div>
+			<div>
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+			<div>
+				<h3>{{game.name}}</h3>
+				<p>Rilasciato il: {{game.released}}</p>
+				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button class="bttn"><i class="bi bi-cart4"></i></button>
+			</div>
+			</div>
+			</div>
+	</ng-template>
+</ngb-carousel>
+<h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
+<ngb-carousel>
+		<ng-template ngbSlide *ngFor="let game of games">
+		<div class="box">
+			<div >
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+				<div>
+					<h3>{{game.name}}</h3>
+					<p>Rilasciato il: {{game.released}}.</p>
+					<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+					<button class="bttn"><i class="bi bi-info-circle"></i></button>
+					<button class="bttn"><i class="bi bi-cart4"></i></button>
+				</div>
+			</div>
+			<div>
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+			<div>
+				<h3>{{game.name}}</h3>
+				<p>Rilasciato il: {{game.released}}</p>
+				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button class="bttn"><i class="bi bi-cart4"></i></button>
+			</div>
+			</div>
+			<div>
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+			<div>
+				<h3>{{game.name}}</h3>
+				<p>Rilasciato il: {{game.released}}</p>
+				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button class="bttn"><i class="bi bi-cart4"></i></button>
+			</div>
+			</div>
+			</div>
+	</ng-template>
+</ngb-carousel>
+<h2>Giochi in <strong class="text-warning">Sconto</strong></h2>
+<ngb-carousel>
+	<ng-template ngbSlide *ngFor="let game of games">
+		<div class="box">
+			<div >
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+				<div>
+					<h3>{{game.name}}</h3>
+					<p>Rilasciato il: {{game.released}}.</p>
+					<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+					<button class="bttn"><i class="bi bi-info-circle"></i></button>
+					<button class="bttn"><i class="bi bi-cart4"></i></button>
+				</div>
+			</div>
+			<div>
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+			<div>
+				<h3>{{game.name}}</h3>
+				<p>Rilasciato il: {{game.released}}</p>
+				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button class="bttn"><i class="bi bi-cart4"></i></button>
+			</div>
+			</div>
+			<div>
+				<div class="picsum-img-wrapper">
+					<img src="{{game.background_image}}" alt="Random first slide" />
+				</div>
+			<div>
+				<h3>{{game.name}}</h3>
+				<p>Rilasciato il: {{game.released}}</p>
+				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
+				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button class="bttn"><i class="bi bi-cart4"></i></button>
+			</div>
+			</div>
+			</div>
+	</ng-template>
+</ngb-carousel>
+
+		<!-- <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
+<ngb-carousel>
+	<ng-template ngbSlide  *ngFor="let game of games">
 		<div class="box">
 		<div >
 			<div class="picsum-img-wrapper">
-				<img src="https://picsum.photos/200" alt="Random first slide" />
+				<img src="{{game.background_image}}" alt="Random first slide" />
 			</div>
 			<div>
-				<h3>First slide label</h3>
-				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+				<h3>{{game.name}}</h3>
+				<p>Rilasciato il: {{game.released}}.</p>
 				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
 				<button class="bttn"><i class="bi bi-info-circle"></i></button>
 				<button class="bttn"><i class="bi bi-cart4"></i></button>
@@ -16,11 +146,11 @@
 		</div>
 		<div>
 			<div class="picsum-img-wrapper">
-				<img src="https://picsum.photos/200" alt="Random first slide" />
+				<img src="{{game.background_image}}" alt="Random first slide" />
 			</div>
 		<div>
-			<h3></h3>
-			<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+			<h3>{{game.name}}</h3>
+			<p>Rilasciato il: {{game.released}}</p>
 			<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
 			<button class="bttn"><i class="bi bi-info-circle"></i></button>
 			<button class="bttn"><i class="bi bi-cart4"></i></button>
@@ -28,158 +158,4 @@
 		</div>
 		</div>
 	</ng-template>
-	<ng-template ngbSlide>
-		<div class="box">
-			<div>
-		<div class="picsum-img-wrapper">
-			<img src="https://picsum.photos/200" alt="Random second slide" />
-		</div>
-		<div>
-			<h3>Second slide label</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		<button class="bttn"><i class="bi bi-heart"></i></button>
-		<button class="bttn"><i class="bi bi-info-circle"></i></button>
-		<button class="bttn"><i class="bi bi-cart4"></i></button>
-	</div>
-	</div>
-	<div>
-		<div class="picsum-img-wrapper">
-			<img src="https://picsum.photos/200" alt="Random second slide" />
-		</div>
-		<div>
-			<h3>Second slide label</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		<button class="bttn"><i class="bi bi-heart"></i></button>
-		<button class="bttn"><i class="bi bi-info-circle"></i></button>
-		<button class="bttn"><i class="bi bi-cart4"></i></button>
-	</div>
-	</div>
-	</div>
-	</ng-template>
-</ngb-carousel>
-<h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
-<ngb-carousel>
-	<ng-template ngbSlide>
-		<div class="box">
-		<div>
-			<div class="picsum-img-wrapper">
-				<img src="https://picsum.photos/200" alt="Random first slide" />
-			</div>
-			<div>
-				<h3>First slide label</h3>
-				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
-			</div>
-		</div>
-		<div>
-			<div class="picsum-img-wrapper">
-				<img src="https://picsum.photos/200" alt="Random first slide" />
-			</div>
-		<div>
-			<h3>First slide label</h3>
-			<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-			<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
-			<button class="bttn"><i class="bi bi-info-circle"></i></button>
-			<button class="bttn"><i class="bi bi-cart4"></i></button>
-		</div>
-		</div>
-		</div>
-	</ng-template>
-	<ng-template ngbSlide>
-		<div class="box">
-			<div>
-		<div class="picsum-img-wrapper">
-			<img src="https://picsum.photos/200" alt="Random second slide" />
-		</div>
-		<div>
-			<h3>Second slide label</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		<button class="bttn"><i class="bi bi-heart"></i></button>
-		<button class="bttn"><i class="bi bi-info-circle"></i></button>
-		<button class="bttn"><i class="bi bi-cart4"></i></button>
-	</div>
-	</div>
-	<div>
-		<div class="picsum-img-wrapper">
-			<img src="https://picsum.photos/200" alt="Random second slide" />
-		</div>
-		<div>
-			<h3>Second slide label</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		<button class="bttn"><i class="bi bi-heart"></i></button>
-		<button class="bttn"><i class="bi bi-info-circle"></i></button>
-		<button class="bttn"><i class="bi bi-cart4"></i></button>
-	</div>
-	</div>
-	</div>
-	</ng-template>
-</ngb-carousel>
-<h2>Giochi in <strong class="text-warning">Sconto</strong></h2>
-<ngb-carousel>
-	<ng-template ngbSlide>
-		<div class="box">
-		<div>
-			<div class="picsum-img-wrapper">
-				<img src="https://picsum.photos/200" alt="Random first slide" />
-			</div>
-			<div>
-				<h3>First slide label</h3>
-				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
-			</div>
-		</div>
-		<div>
-			<div class="picsum-img-wrapper">
-				<img src="https://picsum.photos/200" alt="Random first slide" />
-			</div>
-		<div>
-			<h3>First slide label</h3>
-			<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-			<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
-			<button class="bttn"><i class="bi bi-info-circle"></i></button>
-			<button class="bttn"><i class="bi bi-cart4"></i></button>
-		</div>
-		</div>
-		</div>
-	</ng-template>
-	<ng-template ngbSlide>
-		<div class="box">
-			<div>
-		<div class="picsum-img-wrapper">
-			<img src="https://picsum.photos/200" alt="Random second slide" />
-		</div>
-		<div>
-			<h3>Second slide label</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		<button class="bttn"><i class="bi bi-heart"></i></button>
-		<button class="bttn"><i class="bi bi-info-circle"></i></button>
-		<button class="bttn"><i class="bi bi-cart4"></i></button>
-	</div>
-	</div>
-	<div>
-		<div class="picsum-img-wrapper">
-			<img src="https://picsum.photos/200" alt="Random second slide" />
-		</div>
-		<div>
-			<h3>Second slide label</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		<button class="bttn"><i class="bi bi-heart"></i></button>
-		<button class="bttn"><i class="bi bi-info-circle"></i></button>
-		<button class="bttn"><i class="bi bi-cart4"></i></button>
-	</div>
-	</div>
-	</div>
-	</ng-template>
-</ngb-carousel>
-
-<!-- <h2>Gioch  in <strong class="text-primary">Evidenza</strong></h2>
-<h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
-<h2>Giochi in <strong class="text-warning">Sconto</strong></h2>
-
-		<button class="bttn"><i class="bi bi-heart "></i></button>
-		<button class="bttn"><i class="bi bi-info-circle"></i></button>
-		<button class="bttn"><i class="bi bi-cart4"></i></button> -->
+</ngb-carousel> -->

@@ -5,5 +5,13 @@ export class Games {
     background_image?: string;
     stores?:string;
     platforms?:string;
-    genres?:string;
+    genres?: Array<Genre>
+}
+
+interface Genre{
+    name: string
+}
+
+export interface APIResponse<T>{
+    results: Array<T>;
 }

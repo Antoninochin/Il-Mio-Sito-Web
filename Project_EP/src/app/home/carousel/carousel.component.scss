@@ -12,11 +12,16 @@ ngb-carousel{
 }
 img{
     margin-right: 10px;
+    width: 200px;
+    height: 125px;
+}
+button{
+    margin-bottom: 50px;
 }
 .box{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: center; 
 }
 .bttn {
     border-radius:50px;
