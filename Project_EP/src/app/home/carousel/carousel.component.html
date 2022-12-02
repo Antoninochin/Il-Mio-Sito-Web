@@ -1,10 +1,10 @@
 <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
 <ngb-carousel>
-	<ng-template ngbSlide *ngFor="let game of games">
+	<ng-template ngbSlide *ngFor="let game of games; let i = index;">
 		<div class="box">
 			<div>
 				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
+					<img src="{{game.background_image}} " alt="Random first slide" />
 				</div>
 				<div>
 					<h3>{{game.name}}</h3>

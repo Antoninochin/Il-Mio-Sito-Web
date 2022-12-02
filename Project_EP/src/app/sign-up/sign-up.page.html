@@ -1,20 +1,23 @@
 <div class="box">
-  <form class="container">
-    <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="name" class="form-control" id="name">
+  <form class="container" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-floating mb-3">
+        <label for="floatingName">Name</label>
+        <input type="text" class="form-control" id="floatingName" placeholder="Name" name="name" ngModel required />
       </div>
-      <div class="mb-3">
-        <label for="lastName" class="form-label">LastName</label>
-        <input type="lastName" class="form-control" id="lastName">
+      <div class="form-floating mb-3">
+        <label for="floatingLastName">Surname</label>
+        <input type="text" class="form-control" id="floatingLastName" placeholder="Surname" name="lastName" ngModel
+        required />
       </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+      <div class="form-floating mb-3">
+        <label for="floatingPassword">Password</label>
+        <input type="floatingPassword" class="form-control" id="floatingPassword" placeholder="Password" name="password" ngModel
+        required />
       </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div class="form-floating mb-3">
+      <label for="floatingInput">Email address</label>
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" ngModel
+      required />
     </div>
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
