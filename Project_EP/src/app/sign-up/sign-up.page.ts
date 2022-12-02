@@ -8,17 +8,21 @@ import { ServiziService } from '../auth/servizi.service';
   styleUrls: ['./sign-up.page.scss']
 })
 export class SignUpPage implements OnInit {
-
+  error = undefined;
   constructor(private authService: ServiziService, private router: Router) { }
 
   ngOnInit(): void {
   }
   onSubmit(form: NgForm) {
-    this.authService.signup(form.value).subscribe(
+    this.authService.signUp(form.value).subscribe(
       (data) => {
         console.log(data);
         this.router.navigate(['login']);
       },
+      (err) => {
+        console.log(err);
+        this.error = err.error;
+      }
     );
     form.reset()
   }

@@ -13,7 +13,7 @@ export class CarouselComponent implements OnInit {
 	// let like = document.getElementsByClassName('bttn') as HTMLCollectionOf<HTMLElement>;
   // public games!: Array<Games>;
   games: Games[] = []
-  
+
   constructor(private gamesService: GamesService) { }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
   ngOnInit(): void {
@@ -31,13 +31,7 @@ export class CarouselComponent implements OnInit {
   like(){
   alert('Hai messo like')
   }
-  // getGame(){
-  //   this.gamesService.getGameId()
-  // }
+  
 }
 
 
-// this.gamesService.getGamesAll(this.url,{headers: headers}).subscribe(
-//   resp => this.games = resp,
-//  error => console.log(error)
-//  )
