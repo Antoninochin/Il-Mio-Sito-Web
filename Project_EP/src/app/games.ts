@@ -5,7 +5,8 @@ export class Games {
     background_image?: string;
     stores?:string;
     platforms?:string;
-    genres?: Array<Genre>
+    genres?: Array<Genre>;
+    like?: any
 }
 
 interface Genre{

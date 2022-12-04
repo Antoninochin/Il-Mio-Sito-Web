@@ -26,10 +26,15 @@ export class CarouselComponent implements OnInit {
       }).subscribe((gameList: APIResponse<Games>) =>{
      this.games = gameList.results;
      console.log(gameList)
-    })
+    });
+    // this.gamesService.getGame(this.url, {
+    //   headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
+    //   this.games = gameList.results;
+    // })
   }
   like(){
-  alert('Hai messo like')
+   alert('Hai messo like')
+  // this.games[i].like = this.games[i].like === "like" ? "" : "like" ;
   }
   
 }

@@ -1,7 +1,7 @@
 <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
 <ngb-carousel >
-	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i as index;">
-		<div class="box" *ngIf="i !== 0">
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:5 ">
+		<div class="box">
 			<div >
 				<div class="picsum-img-wrapper">
 					<img src="{{game.background_image}}" alt="Random first slide" />
@@ -43,7 +43,7 @@
 </ngb-carousel>
 <h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
 <ngb-carousel>
-		<ng-template ngbSlide *ngFor="let game of games | slice:0:5">
+		<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
 		<div class="box">
 			<div >
 				<div class="picsum-img-wrapper">
@@ -86,11 +86,11 @@
 </ngb-carousel>
 <h2>Giochi in <strong class="text-warning">Sconto</strong></h2>
 <ngb-carousel>
-	<ng-template ngbSlide *ngFor="let game of games | slice:0:5 ">
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
 		<div class="box" >
 			<div >
 				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
+					<img src="{{game.background_image}}">{{i+1}} alt="Random first slide" />
 				</div>
 				<div>
 					<h3>{{game.name}}</h3>
