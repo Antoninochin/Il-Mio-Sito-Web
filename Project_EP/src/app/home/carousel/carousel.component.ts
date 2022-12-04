@@ -9,6 +9,7 @@ import { GamesService } from 'src/app/games.service';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
+
 export class CarouselComponent implements OnInit {
 	// let like = document.getElementsByClassName('bttn') as HTMLCollectionOf<HTMLElement>;
   // public games!: Array<Games>;

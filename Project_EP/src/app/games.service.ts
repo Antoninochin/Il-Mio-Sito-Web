@@ -23,9 +23,5 @@ export class GamesService {
     }).pipe(shareReplay(1));
    }
 
-  // deleteGame(id: number) {
-  //  return this.http.delete(this.url + id);
-  // }
-
 }
 
