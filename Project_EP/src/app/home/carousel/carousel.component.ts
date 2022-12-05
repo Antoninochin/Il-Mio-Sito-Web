@@ -22,22 +22,28 @@ export class CarouselComponent implements OnInit {
       'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
       'X-RapidAPI-Key': '303df10c14msh14901127afe3b8bp121776jsnd0ba57cd245c',
     });
-    this.gamesService.getGamesAll(this.url, {
-      headers: headers
-      }).subscribe((gameList: APIResponse<Games>) =>{
-     this.games = gameList.results;
-     console.log(gameList)
+    // this.gamesService.getGamesAll(this.url, {
+    //   headers: headers,
+    //   }).subscribe((gameList: APIResponse<Games>) =>{
+    //  this.games = gameList.results;
+    //  console.log(gameList)
+    // });
+     this.gamesService.getGame(this.url, {
+      headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
+       this.games = gameList.results;
+       for(let i =0; i < gameList.results.length, i++;){
+        if (gameList.results === gameList.results[i])
+        i++
+       }
+       console.log(this.games)
     });
-    // this.gamesService.getGame(this.url, {
-    //   headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
-    //   this.games = gameList.results;
-    // })
-  }
-  like(){
-   alert('Hai messo like')
-  // this.games[i].like = this.games[i].like === "like" ? "" : "like" ;
+    
   }
   
+  like(onClick:any): any{
+   if(onClick){
+    return '.like';
+   }
+  } 
 }
-
 

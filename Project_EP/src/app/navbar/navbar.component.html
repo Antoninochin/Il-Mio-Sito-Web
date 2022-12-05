@@ -4,8 +4,8 @@
 		<img src="../../assets/img/MioLogo.png" alt="Logo">
 		<a [routerLink]="['picsum-img-wrapper']" ><i class="bi bi-fire"></i></a>
 	</div>
-	<form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search">
+	<form class="d-flex" role="search" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search">
         <button class="btn" type="submit">Search</button>
       </form>
 	<div ngbNavItem>

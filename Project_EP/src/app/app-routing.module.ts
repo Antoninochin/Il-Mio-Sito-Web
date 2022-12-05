@@ -10,6 +10,10 @@ const routes: Routes = [
     component:HomePage,
   },
   {
+  path:'search/:game-search',
+  component:HomePage,
+  },
+  {
     path:'login',
     component:LoginPage,
   },
