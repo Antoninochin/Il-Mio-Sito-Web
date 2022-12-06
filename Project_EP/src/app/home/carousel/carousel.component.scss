@@ -20,11 +20,15 @@ button{
     justify-content: space-around;
     align-items: center; 
 }
-.bttn {
+.bttn, .bttn2, .bttn3 {
     border-radius:50px;
     border: none;
     margin-right: 5px;
     color: grey;
+}
+.bttn2{
+    background-color: green;
+    color: whitesmoke;
 }
 .like{
     background-color: red;

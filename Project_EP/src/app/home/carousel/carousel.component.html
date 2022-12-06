@@ -1,6 +1,6 @@
 <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
 <ngb-carousel>
-	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; index as i; first as isRepeat" >
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; index as i; first as isFirst" >
 		<div class="box">
 			<div >
 				<div class="picsum-img-wrapper">
@@ -10,7 +10,7 @@
 					<h3>{{game.name}}</h3>
 					<p>Rilasciato il: {{game.released }}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-					<button class="bttn"><i class="bi bi-info-circle"></i></button>
+					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 					<button class="bttn"><i class="bi bi-cart4"></i></button>
 				</div>
 			</div>
@@ -22,7 +22,7 @@
 				<h3>{{game.name}}</h3>
 				<p>Rilasciato il: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
@@ -34,7 +34,7 @@
 				<h3>{{game.name}}</h3>
 				<p>Rilasciato il: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
@@ -43,7 +43,7 @@
 </ngb-carousel>
 <h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
 <ngb-carousel>
-		<ng-template id="navigate" ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
+		<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
 		<div class="box">
 			<div >
 				<div class="picsum-img-wrapper">
@@ -53,7 +53,7 @@
 					<h3>{{game.name}}</h3>
 					<p>Rilasciato il: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-					<button class="bttn"><i class="bi bi-info-circle"></i></button>
+					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 					<button class="bttn"><i class="bi bi-cart4"></i></button>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 				<h3>{{game.name}}</h3>
 				<p>Rilasciato il: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
@@ -77,7 +77,7 @@
 				<h3>{{game.name}}</h3>
 				<p>Rilasciato il: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
@@ -96,7 +96,7 @@
 					<h3>{{game.name}}</h3>
 					<p>Rilasciato il: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-					<button class="bttn"><i class="bi bi-info-circle"></i></button>
+					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 					<button class="bttn"><i class="bi bi-cart4"></i></button>
 				</div>
 			</div>
@@ -108,7 +108,7 @@
 				<h3>{{game.name}}</h3>
 				<p>Rilasciato il: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
+				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
@@ -120,8 +120,8 @@
 				<h3>{{game.name}}</h3>
 				<p>Rilasciato il: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
+				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
+				<button class="bttn3"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
 			</div>

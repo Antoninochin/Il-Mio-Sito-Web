@@ -23,7 +23,7 @@ const routes: Routes = [
     component:SignUpPage,
   },
   {
-    path:'detailsgame/:id',
+    path:'detailsgame',
     component:DetailsgameComponent,
   },
  

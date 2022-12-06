@@ -13,7 +13,6 @@ import { GamesService } from 'src/app/games.service';
 
 export class CarouselComponent implements OnInit {
 	// let like = document.getElementsByClassName('bttn') as HTMLCollectionOf<HTMLElement>;
-  // public games!: Array<Games>;
   games: Games[] = []
 
   constructor(private gamesService: GamesService, private activatedRoute:ActivatedRoute) { }
@@ -32,10 +31,10 @@ export class CarouselComponent implements OnInit {
      this.gamesService.getGame(this.url, {
       headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
        this.games = gameList.results;
-       for(let i =0; i < gameList.results.length, i++;){
-        if (gameList.results === gameList.results[i])
-        i++
-       }
+      //  for(let i =0; i < gameList.results.length, i++;){
+      //   if (gameList.results === gameList.results[i])
+      //   i++
+      //  }
        console.log(this.games)
     });
   }
