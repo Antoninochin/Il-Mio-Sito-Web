@@ -15,11 +15,11 @@ export class SignUpPage implements OnInit {
   }
   onSubmit(form: NgForm) {
     this.authService.signUp(form.value).subscribe(
-      (data) => {
+      data => {
         console.log(data);
-        this.router.navigate(['login']);
+        this.router.navigate(['/login']);
       },
-      (err) => {
+      err => {
         console.log(err);
         this.error = err.error;
       }

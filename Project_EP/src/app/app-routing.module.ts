@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailsgameComponent } from './home/detailsgame/detailsgame.component';
 import { HomePage } from './home/home.page';
 import { LoginPage } from './login/login.page';
 import { SignUpPage } from './sign-up/sign-up.page';
@@ -18,8 +19,12 @@ const routes: Routes = [
     component:LoginPage,
   },
   {
-    path:'sign-Up',
+    path:'sign-up',
     component:SignUpPage,
+  },
+  {
+    path:'detailsgame/:id',
+    component:DetailsgameComponent,
   },
  
 ];

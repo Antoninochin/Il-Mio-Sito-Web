@@ -1,8 +1,8 @@
 <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
-<ngb-carousel >
-	<ng-template ngbSlide *ngFor="let game of games| slice:0:5; index as i; count as isCount" >
-		<div class="box" >
-			<div *ngIf="isCount">
+<ngb-carousel>
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; index as i; first as isRepeat" >
+		<div class="box">
+			<div >
 				<div class="picsum-img-wrapper">
 					<img  src="{{game.background_image}}" alt="Random first slide" />
 				</div>
@@ -43,7 +43,7 @@
 </ngb-carousel>
 <h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
 <ngb-carousel>
-		<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
+		<ng-template id="navigate" ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
 		<div class="box">
 			<div >
 				<div class="picsum-img-wrapper">
@@ -127,35 +127,3 @@
 			</div>
 	</ng-template>
 </ngb-carousel>
-
-		<!-- <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
-<ngb-carousel>
-	<ng-template ngbSlide  *ngFor="let game of games">
-		<div class="box">
-		<div >
-			<div class="picsum-img-wrapper">
-				<img src="{{game.background_image}}" alt="Random first slide" />
-			</div>
-			<div>
-				<h3>{{game.name}}</h3>
-				<p>Rilasciato il: {{game.released}}.</p>
-				<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
-				<button class="bttn"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
-			</div>
-		</div>
-		<div>
-			<div class="picsum-img-wrapper">
-				<img src="{{game.background_image}}" alt="Random first slide" />
-			</div>
-		<div>
-			<h3>{{game.name}}</h3>
-			<p>Rilasciato il: {{game.released}}</p>
-			<button class="bttn" (click)="like()"><i class="bi bi-heart"></i></button>
-			<button class="bttn"><i class="bi bi-info-circle"></i></button>
-			<button class="bttn"><i class="bi bi-cart4"></i></button>
-		</div>
-		</div>
-		</div>
-	</ng-template>
-</ngb-carousel> -->

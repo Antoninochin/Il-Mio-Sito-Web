@@ -16,6 +16,7 @@ import { CarouselComponent } from './home/carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
+import { DetailsgameComponent } from './home/detailsgame/detailsgame.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
     HomePage,
     LoginPage,
     SignUpPage,
-    CarouselComponent
+    CarouselComponent,
+    DetailsgameComponent
   ],
   imports: [
     BrowserModule,

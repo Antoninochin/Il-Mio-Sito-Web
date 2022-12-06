@@ -1,6 +1,7 @@
 
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { APIResponse, Games } from 'src/app/games';
 import { GamesService } from 'src/app/games.service';
 
@@ -15,7 +16,7 @@ export class CarouselComponent implements OnInit {
   // public games!: Array<Games>;
   games: Games[] = []
 
-  constructor(private gamesService: GamesService) { }
+  constructor(private gamesService: GamesService, private activatedRoute:ActivatedRoute) { }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
   ngOnInit(): void {
     let headers = new HttpHeaders({
@@ -37,9 +38,8 @@ export class CarouselComponent implements OnInit {
        }
        console.log(this.games)
     });
-    
   }
-  
+
   like(onClick:any): any{
    if(onClick){
     return '.like';
