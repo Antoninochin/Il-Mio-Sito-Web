@@ -16,6 +16,7 @@ export class CarouselComponent implements OnInit {
   games: Games[] = []
   
   
+  
 
   constructor(private gamesService: GamesService, private activatedRoute:ActivatedRoute) { }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
@@ -33,12 +34,11 @@ export class CarouselComponent implements OnInit {
      this.gamesService.getGame(this.url, {
       headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
        this.games = gameList.results;
-       for(let i =0; i < this.games.length; i++){
-       }
+       
       console.log(this.games)
     });
   }
-
+  
   like(i:any){
     if(this.myLike !== null){
       this.myLike.style.backgroundColor = "red"

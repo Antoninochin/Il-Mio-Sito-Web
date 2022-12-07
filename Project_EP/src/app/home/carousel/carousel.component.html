@@ -1,8 +1,9 @@
-<!-- <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
+<h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
 <ngb-carousel>
-	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; index as i;" >
-		<div class="box">
-			<div >		
+	<ng-container *ngFor="let game of games | slice:0:5; index as i; first as isFirst;count as count" >
+	<ng-template ngbSlide >
+		<div class="box"  >
+			<div>		
 				<div class="picsum-img-wrapper">
 					<img  src="{{game.background_image}}" alt="Random first slide" />
 				</div>
@@ -37,7 +38,8 @@
 			</div>
 			</div>
 			</div>
-	</ng-template>
+		</ng-template>
+	</ng-container>
 </ngb-carousel>
 <h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
 <ngb-carousel>
@@ -120,27 +122,6 @@
 			</div>
 			</div>
 	</ng-template>
-</ngb-carousel> -->
+</ngb-carousel>
 <!-- <button class="bttn3"><i class="bi bi-cart4"></i></button> -->
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-	<ol class="carousel-indicators">
-	  <li data-target="#carouselExampleCaptions"  *ngFor="let game of games;let index = index" [attr.data-slide-to]="index"></li>
-	</ol>
-	<div class="carousel-inner">
-	  <div class="carousel-item" *ngFor="let game of games;let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
-		<img [src]="game.background_image" class="d-block w-100" [alt]="Random first slide">
-		<div class="carousel-caption d-none d-md-block">
-		  <h5 [textContent]="game.name"></h5>
-		  <p [textContent]="game.released"></p>
-		</div>
-	  </div>
-	</div>
-	<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	  <span class="sr-only">Previous</span>
-	</a>
-	<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	  <span class="sr-only">Next</span>
-	</a>
-  </div>
+
