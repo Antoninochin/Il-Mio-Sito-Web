@@ -7,7 +7,6 @@ export class Games {
     parent_platforms?:Array<ParentPlatform>
     genres?: Array<Genre>;
     rating?:number;
-    like?: any
 }
 
 

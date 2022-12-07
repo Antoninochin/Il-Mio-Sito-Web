@@ -12,8 +12,10 @@ import { GamesService } from 'src/app/games.service';
 })
 
 export class CarouselComponent implements OnInit {
-	// let like = document.getElementsByClassName('bttn') as HTMLCollectionOf<HTMLElement>;
+  myLike = document.querySelector(".bttn") as HTMLElement;
   games: Games[] = []
+  
+  
 
   constructor(private gamesService: GamesService, private activatedRoute:ActivatedRoute) { }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
@@ -31,18 +33,18 @@ export class CarouselComponent implements OnInit {
      this.gamesService.getGame(this.url, {
       headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
        this.games = gameList.results;
-      //  for(let i =0; i < gameList.results.length, i++;){
-      //   if (gameList.results === gameList.results[i])
-      //   i++
-      //  }
-       console.log(this.games)
+       for(let i =0; i < this.games.length; i++){
+       }
+      console.log(this.games)
     });
   }
 
-  like(onClick:any): any{
-   if(onClick){
-    return '.like';
+  like(i:any){
+    if(this.myLike !== null){
+      this.myLike.style.backgroundColor = "red"
+  }
+    console.log(this.like(i))
    }
-  } 
+  
 }
 

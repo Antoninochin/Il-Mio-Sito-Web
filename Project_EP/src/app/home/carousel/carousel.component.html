@@ -1,17 +1,17 @@
-<h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
+<!-- <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
 <ngb-carousel>
-	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; index as i; first as isFirst" >
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; index as i;" >
 		<div class="box">
-			<div >
+			<div >		
 				<div class="picsum-img-wrapper">
 					<img  src="{{game.background_image}}" alt="Random first slide" />
 				</div>
 				<div>
 					<h3>{{game.name}}</h3>
-					<p>Rilasciato il: {{game.released }}.</p>
+					<p>Released: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-					<button class="bttn"><i class="bi bi-cart4"></i></button>
+
 				</div>
 			</div>
 			<div>
@@ -20,10 +20,9 @@
 				</div>
 			<div>
 				<h3>{{game.name}}</h3>
-				<p>Rilasciato il: {{game.released}}</p>
+				<p>Released: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
 			<div>
@@ -32,10 +31,9 @@
 				</div>
 			<div>
 				<h3>{{game.name}}</h3>
-				<p>Rilasciato il: {{game.released}}</p>
+				<p>Released: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
 			</div>
@@ -51,10 +49,10 @@
 				</div>
 				<div>
 					<h3>{{game.name}}</h3>
-					<p>Rilasciato il: {{game.released}}.</p>
+					<p>Released: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-					<button class="bttn"><i class="bi bi-cart4"></i></button>
+
 				</div>
 			</div>
 			<div>
@@ -63,10 +61,9 @@
 				</div>
 			<div>
 				<h3>{{game.name}}</h3>
-				<p>Rilasciato il: {{game.released}}</p>
+				<p>Released: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
 			<div>
@@ -75,16 +72,15 @@
 				</div>
 			<div>
 				<h3>{{game.name}}</h3>
-				<p>Rilasciato il: {{game.released}}</p>
+				<p>Released: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
 			</div>
 	</ng-template>
 </ngb-carousel>
-<h2>Giochi in <strong class="text-warning">Sconto</strong></h2>
+<h2>Giochi i più <strong class="text-warning">Richiesti</strong></h2>
 <ngb-carousel>
 	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
 		<div class="box" >
@@ -94,10 +90,10 @@
 				</div>
 				<div>
 					<h3>{{game.name}}</h3>
-					<p>Rilasciato il: {{game.released}}.</p>
+					<p>Released: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-					<button class="bttn"><i class="bi bi-cart4"></i></button>
+
 				</div>
 			</div>
 			<div>
@@ -106,10 +102,9 @@
 				</div>
 			<div>
 				<h3>{{game.name}}</h3>
-				<p>Rilasciato il: {{game.released}}</p>
+				<p>Released: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
 			<div>
@@ -118,12 +113,34 @@
 				</div>
 			<div>
 				<h3>{{game.name}}</h3>
-				<p>Rilasciato il: {{game.released}}</p>
+				<p>Released: {{game.released}}</p>
 				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-				<button class="bttn3"><i class="bi bi-cart4"></i></button>
 			</div>
 			</div>
 			</div>
 	</ng-template>
-</ngb-carousel>
+</ngb-carousel> -->
+<!-- <button class="bttn3"><i class="bi bi-cart4"></i></button> -->
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+	  <li data-target="#carouselExampleCaptions"  *ngFor="let game of games;let index = index" [attr.data-slide-to]="index"></li>
+	</ol>
+	<div class="carousel-inner">
+	  <div class="carousel-item" *ngFor="let game of games;let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
+		<img [src]="game.background_image" class="d-block w-100" [alt]="Random first slide">
+		<div class="carousel-caption d-none d-md-block">
+		  <h5 [textContent]="game.name"></h5>
+		  <p [textContent]="game.released"></p>
+		</div>
+	  </div>
+	</div>
+	<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	  <span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	  <span class="sr-only">Next</span>
+	</a>
+  </div>

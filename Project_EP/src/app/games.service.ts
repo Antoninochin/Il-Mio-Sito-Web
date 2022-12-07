@@ -13,14 +13,14 @@ export class GamesService {
   constructor( private http: HttpClient) { }
 
  getGamesAll(url:string, body: {}){
-    // return this.http.get<Games[]>(url, body)
+
     return this.http.get<APIResponse<Games>>(`${env.BASE_URL}/games`,{
-    }).pipe(shareReplay(1));
+    })//.pipe(shareReplay(1));
    }
    
    getGame(url:string, body: {}){
     return this.http.get<APIResponse<Games>>(`${env.BASE_URL}/games`,{
-    }).pipe(shareReplay(1));
+    });
    }
 
    
