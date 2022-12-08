@@ -2,10 +2,10 @@
 <div class="box navbar" ngbNav #nav="ngbNav" class="nav-tabs box">
     <div>
 		<img src="../../assets/img/MioLogo.png" alt="Logo">
-		<a [routerLink]="['navigate']" ><i class="bi bi-fire"></i></a>
+		<a href="#navigate" ><i class="bi bi-fire"></i></a>
 	</div>
-	<form class="d-flex" role="search" #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <input class="form-control me-2" type="search" name="search" placeholder="Search">
+	<form class="d-flex" role="search" #form="ngForm" (ngSubmit)="onSubmit(form)" *ngFor="let game of games | slice:0:1">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search" value="{{game.name}}">
         <button class="btn" type="submit">Search</button>
       </form>
 	<div ngbNavItem>

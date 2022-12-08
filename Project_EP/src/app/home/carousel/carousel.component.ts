@@ -15,9 +15,6 @@ export class CarouselComponent implements OnInit {
   myLike = document.querySelector(".bttn") as HTMLElement;
   games: Games[] = []
   
-  
-  
-
   constructor(private gamesService: GamesService, private activatedRoute:ActivatedRoute) { }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
   ngOnInit(): void {
@@ -34,7 +31,6 @@ export class CarouselComponent implements OnInit {
      this.gamesService.getGame(this.url, {
       headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
        this.games = gameList.results;
-       
       console.log(this.games)
     });
   }

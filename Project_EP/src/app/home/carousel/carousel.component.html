@@ -2,7 +2,7 @@
 <ngb-carousel>
 	<ng-container *ngFor="let game of games | slice:0:5; index as i; first as isFirst;count as count" >
 	<ng-template ngbSlide >
-		<div class="box"  >
+		<div class="box">
 			<div>		
 				<div class="picsum-img-wrapper">
 					<img  src="{{game.background_image}}" alt="Random first slide" />
@@ -12,7 +12,6 @@
 					<p>Released: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-
 				</div>
 			</div>
 			<div>
@@ -41,7 +40,7 @@
 		</ng-template>
 	</ng-container>
 </ngb-carousel>
-<h2>Giochi di <strong class="text-danger">Tendenza</strong></h2>
+<h2>Giochi più <strong class="text-success">Richiesti</strong></h2>
 <ngb-carousel>
 		<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
 		<div class="box">
@@ -54,7 +53,6 @@
 					<p>Released: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-
 				</div>
 			</div>
 			<div>
@@ -82,7 +80,7 @@
 			</div>
 	</ng-template>
 </ngb-carousel>
-<h2>Giochi i più <strong class="text-warning">Richiesti</strong></h2>
+<h2 id="navigate">Giochi di<strong class="text-danger">Tendenza</strong></h2>
 <ngb-carousel>
 	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
 		<div class="box" >
