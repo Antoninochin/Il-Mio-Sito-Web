@@ -8,6 +8,11 @@ div img{
     margin-left: 30px;
     color: red;
 }
+.bi-list{
+    font-size: 30px;
+    margin-left: 30px;
+    color: black;
+}
 a{
     color:black;
     text-decoration: none;
@@ -29,9 +34,32 @@ a:hover{
     background: blue;
     color: white;
 }
-//  @media screen and (min-width:731px)  {
-//     .navbar,
-//     .search{
-//         display: none;
-//     }
-//  }
+@media screen and (min-width:732px){
+    .visible{
+        display: none;
+    }
+}
+ @media screen and (max-width:731px)  {
+    .visible{
+        display: block;
+    }
+    .display{
+        display: none;
+    }
+ }
+ @media screen and (min-width:526px)  {
+    .search-bar{
+        display:block;
+    }
+    .search{
+        display:none;
+    }
+ }
+ @media screen and (max-width:525px)  {
+    .search-bar{
+        display: none;
+    }
+    .search{
+        display:block;
+    }
+ }

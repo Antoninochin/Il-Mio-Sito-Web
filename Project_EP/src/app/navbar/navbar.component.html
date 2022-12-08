@@ -4,18 +4,49 @@
 		<img src="../../assets/img/MioLogo.png" alt="Logo">
 		<a href="#navigate" ><i class="bi bi-fire"></i></a>
 	</div>
-	<form class="d-flex" role="search" #form="ngForm" (ngSubmit)="onSubmit(form)" *ngFor="let game of games | slice:0:1">
-        <input class="form-control me-2" type="search" name="search" placeholder="Search" value="{{game.name}}">
-        <button class="btn" type="submit">Search</button>
+	<form class="d-flex"  role="search" #form="ngForm" (ngSubmit)="onSubmit(form)" *ngFor="let game of games |slice:0:1 ">
+        <input class="form-control me-2 search-bar" type="search" name="search" placeholder="Search" value="">
+        <button class="btn search-bar" type="submit">Search</button>
+<!-- Start Search-bar media query -->
+		<div class="row search" >
+			<div class="col">
+				<div ngbDropdown class="d-inline-block">
+					<button type="button" class="btn btn-outline" id="dropdownBasic1" ngbDropdownToggle>
+						<i class="bi bi-search"></i>
+					</button>
+					<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+						<input class="form-control me-2" type="search" name="search" placeholder="Search" value="">
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- End Search-bar media query -->
       </form>
-	<div ngbNavItem>
+	<div ngbNavItem class="display">
 		<a [routerLink]="['/']" routerLinkActive="active"><i class="bi bi-house-fill"></i> Home</a>
 	</div>
-	<div ngbNavItem>
+	<div ngbNavItem class="display">
 		<a [routerLink]="['login']"><i class="bi bi-person-fill"></i> Login</a>
 	</div>
-	<div ngbNavItem>
+	<div ngbNavItem class="display">
 		<a [routerLink]="['sign-up']"><i class="bi bi-pencil-square"></i> Register</a>
 	</div>
+<!-- Start Menù Hamburger media query -->
+	<div class="row" class="visible">
+		<div class="col">
+			<div ngbDropdown class="d-inline-block">
+				<button type="button" class="btn btn-outline" id="dropdownBasic1" ngbDropdownToggle>
+					<i class="bi bi-list"></i>
+				</button>
+				<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+					<button ngbDropdownItem><a [routerLink]="['/']">Home</a></button>
+					<button ngbDropdownItem><a [routerLink]="['login']">Login</a></button>
+					<button ngbDropdownItem><a [routerLink]="['sign-up']">Register</a></button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- End Menù Hamburger media query -->
 </div>
+
 
