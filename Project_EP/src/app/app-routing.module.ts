@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailsgameComponent } from './home/detailsgame/detailsgame.component';
 import { HomePage } from './home/home.page';
-import { LoginPage } from './login/login.page';
-import { SignUpPage } from './sign-up/sign-up.page';
+import { LoginPage } from './auth/login/login.page';
+import { SignUpPage } from './auth/sign-up/sign-up.page';
 
 const routes: Routes = [
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component:LoginPage,
   },
   {
-    path:'sign-up',
+    path:'sign-Up',
     component:SignUpPage,
   },
   {

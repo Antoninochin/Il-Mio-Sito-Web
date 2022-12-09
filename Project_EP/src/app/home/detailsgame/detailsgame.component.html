@@ -1,21 +1,24 @@
-<button class="bg-warning rounded m-3 text-white" [routerLink]="['/']">Return</button>
-<div *ngFor="let game of games | slice:0:9; index as i;">
-<div class="card mb-3 mx-5" *ngFor="let store of game?.stores| slice:0:1;">
-    <div  *ngFor="let platform of game?.parent_platforms| slice:0:1;index as i;">
-      <div class="row g-0" *ngFor="let genre of game?.genres| slice:0:1;">
-        <div class="col-md-5 ">
-        <img src="{{game.background_image}}" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8" >
-        <div class="card-body">
-            <h5 class="card-title">{{game.name}}</h5>
-            <p class="card-text">It's a play': {{genre.name}}'</p>
-            <p class="card-text">This game it's buy on: '{{store.store.name}}'</p>
-          <p class="card-text" >and it's playable on: {{platform.platform.name}}</p>
-          <p class="card-text"><small class="text-muted">released: {{game.released}}</small></p>
+
+  <button class="bg-warning rounded m-3 text-white" [routerLink]="['/']">Return</button>
+  <div *ngFor="let game of games | slice:0:20; index as i;">
+    <div class="card mb-3 mx-5" *ngFor="let store of game?.stores| slice:0:1;">
+      <div  *ngFor="let platform of game?.parent_platforms| slice:0:1;index as i;">
+        <div class="row g-0" *ngFor="let genre of game?.genres| slice:0:1;">
+          <div class="col-md-5 ">
+            <img src="{{game.background_image}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8" >
+            <div class="card-body">
+              <h5 class="card-title">{{game.name}}</h5>
+              <p class="card-text">It's a play': {{genre.name}}'</p>
+              <p class="card-text">This game it's buy on: '{{store.store.name}}'</p>
+              <p class="card-text" >and it's playable on: {{platform.platform.name}}</p>
+              <p class="card-text"><small class="text-muted">released: {{game.released}}</small></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 

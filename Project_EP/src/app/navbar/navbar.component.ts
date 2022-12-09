@@ -2,6 +2,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Users } from '../auth/users';
 import { APIResponse, Games } from '../games';
 import { GamesService } from '../games.service';
 
@@ -13,6 +14,7 @@ import { GamesService } from '../games.service';
 export class NavbarComponent implements OnInit {
   name:any
   user:any
+  users:Users[]= []
   games: Games[] = []
   constructor( private router: Router,private gamesService: GamesService) { }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'

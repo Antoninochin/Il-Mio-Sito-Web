@@ -1,9 +1,8 @@
 <h2>Giochi in <strong class="text-primary">Evidenza</strong></h2>
 <ngb-carousel>
-	<ng-container *ngFor="let game of games | slice:0:5 ;index as i"; >
-	<ng-template ngbSlide >
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
 		<div class="box">
-			<div>		
+			<div *ngFor="let game of games | slice:0:3 ;index as i;">		
 				<div class="picsum-img-wrapper">
 					<img  src="{{game.background_image}}" alt="Random first slide" />
 				</div>
@@ -14,39 +13,46 @@
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 				</div>
 			</div>
-			<div>
-				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
-				</div>
-			<div>
-				<h3>{{game.name}}</h3>
-				<p>Released: {{game.released}}</p>
-				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-			</div>
-			</div>
-			<div>
-				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
-				</div>
-			<div>
-				<h3>{{game.name}}</h3>
-				<p>Released: {{game.released}}</p>
-				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-			</div>
-			</div>
 			</div>
 		</ng-template>
-	</ng-container>
+		<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
+			<div class="box">
+				<div *ngFor="let game of games | slice:3:6 ;index as i;">		
+					<div class="picsum-img-wrapper">
+						<img  src="{{game.background_image}}" alt="Random first slide" />
+					</div>
+					<div>
+						<h3>{{game.name}}</h3>
+						<p>Released: {{game.released}}.</p>
+						<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
+						<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
+					</div>
+				</div>
+				</div>
+			</ng-template>
+			<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
+				<div class="box">
+					<div *ngFor="let game of games | slice:6:9 ;index as i;">		
+						<div class="picsum-img-wrapper">
+							<img  src="{{game.background_image}}" alt="Random first slide" />
+						</div>
+						<div>
+							<h3>{{game.name}}</h3>
+							<p>Released: {{game.released}}.</p>
+							<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
+							<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
+						</div>
+					</div>
+					</div>
+				</ng-template>
 </ngb-carousel>
 <h2>Giochi più <strong class="text-success">Richiesti</strong></h2>
 <ngb-carousel>
-		<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
 		<div class="box">
-			<div >
+			<div *ngFor="let game of games | slice:9:12 ;index as i;">		
 				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
+					<img  src="{{game.background_image}}" alt="Random first slide" />
 				</div>
 				<div>
 					<h3>{{game.name}}</h3>
@@ -55,71 +61,86 @@
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
 				</div>
 			</div>
-			<div>
-				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
+			</div>
+		</ng-template>
+		<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
+			<div class="box">
+				<div *ngFor="let game of games | slice:12:15 ;index as i;">		
+					<div class="picsum-img-wrapper">
+						<img  src="{{game.background_image}}" alt="Random first slide" />
+					</div>
+					<div>
+						<h3>{{game.name}}</h3>
+						<p>Released: {{game.released}}.</p>
+						<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
+						<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
+					</div>
 				</div>
-			<div>
-				<h3>{{game.name}}</h3>
-				<p>Released: {{game.released}}</p>
-				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-			</div>
-			</div>
-			<div>
-				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
 				</div>
-			<div>
-				<h3>{{game.name}}</h3>
-				<p>Released: {{game.released}}</p>
-				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-			</div>
-			</div>
-			</div>
-	</ng-template>
+			</ng-template>
+			<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
+				<div class="box">
+					<div *ngFor="let game of games | slice:15:18 ;index as i;">		
+						<div class="picsum-img-wrapper">
+							<img  src="{{game.background_image}}" alt="Random first slide" />
+						</div>
+						<div>
+							<h3>{{game.name}}</h3>
+							<p>Released: {{game.released}}.</p>
+							<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
+							<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
+						</div>
+					</div>
+					</div>
+				</ng-template>
 </ngb-carousel>
 <h2 id="navigate">Giochi di<strong class="text-danger">Tendenza</strong></h2>
 <ngb-carousel>
-	<ng-template ngbSlide *ngFor="let game of games | slice:0:5; let i = index">
-		<div class="box" >
-			<div >
+	<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
+		<div class="box">
+			<div *ngFor="let game of games | slice:17:20 ;index as i;">		
 				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
+					<img  src="{{game.background_image}}" alt="Random first slide" />
 				</div>
 				<div>
 					<h3>{{game.name}}</h3>
 					<p>Released: {{game.released}}.</p>
 					<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
 					<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-
 				</div>
 			</div>
-			<div>
-				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
+			</div>
+		</ng-template>
+		<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
+			<div class="box">
+				<div *ngFor="let game of games | slice:0:3 ;index as i;">		
+					<div class="picsum-img-wrapper">
+						<img  src="{{game.background_image}}" alt="Random first slide" />
+					</div>
+					<div>
+						<h3>{{game.name}}</h3>
+						<p>Released: {{game.released}}.</p>
+						<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
+						<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
+					</div>
 				</div>
-			<div>
-				<h3>{{game.name}}</h3>
-				<p>Released: {{game.released}}</p>
-				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-			</div>
-			</div>
-			<div>
-				<div class="picsum-img-wrapper">
-					<img src="{{game.background_image}}" alt="Random first slide" />
 				</div>
-			<div>
-				<h3>{{game.name}}</h3>
-				<p>Released: {{game.released}}</p>
-				<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
-				<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
-			</div>
-			</div>
-			</div>
-	</ng-template>
+			</ng-template>
+			<ng-template ngbSlide *ngFor="let game of games | slice:0:1 ;index as i;">
+				<div class="box">
+					<div *ngFor="let game of games | slice:9:12 ;index as i;">		
+						<div class="picsum-img-wrapper">
+							<img  src="{{game.background_image}}" alt="Random first slide" />
+						</div>
+						<div>
+							<h3>{{game.name}}</h3>
+							<p>Released: {{game.released}}.</p>
+							<button class="bttn" (click)="like(i)"><i class="bi bi-heart"></i></button>
+							<button [routerLink]="['/detailsgame']" class="bttn2"><i class="bi bi-info-circle"></i></button>
+						</div>
+					</div>
+					</div>
+				</ng-template>
 </ngb-carousel>
 <!-- <button class="bttn3"><i class="bi bi-cart4"></i></button> -->
 
