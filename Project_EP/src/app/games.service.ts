@@ -18,9 +18,8 @@ export class GamesService {
     })//.pipe(shareReplay(1));
    }
    
-   getGame(url:string, body: {}){
-    return this.http.get<APIResponse<Games>>(`${env.BASE_URL}/games`,{
-    });
+   getGame(name:string){
+    return this.http.get<APIResponse<Games>>(`${env.BASE_URL}/games/search?q=${name}`);
    }
 
    

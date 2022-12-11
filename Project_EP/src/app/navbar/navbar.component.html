@@ -4,9 +4,10 @@
 		<img src="../../assets/img/MioLogo.png" alt="Logo">
 		<a href="#navigate" ><i class="bi bi-fire"></i></a>
 	</div>
-	<form class="d-flex"  role="search" #form="ngForm" (ngSubmit)="onSubmit(form)" *ngFor="let game of games |slice:0:1 ">
-        <input class="form-control me-2 search-bar" type="search" name="search" placeholder="Search" value="">
+	<form class="d-flex" [formGroup]="searchForm"  role="search">
+        <input class="form-control me-2 search-bar" type="search" name="search" formControlName="search" placeholder="Search" value="">
         <button class="btn search-bar" type="submit">Search</button>
+
 <!-- Start Search-bar media query -->
 		<div class="row search" >
 			<div class="col">
@@ -22,6 +23,7 @@
 		</div>
 <!-- End Search-bar media query -->
       </form>
+	  
 	<div ngbNavItem class="display">
 		<a [routerLink]="['/']" routerLinkActive="active"><i class="bi bi-house-fill"></i> Home</a>
 	</div>
@@ -49,5 +51,6 @@
 	</div>
 <!-- End Menù Hamburger media query -->
 </div>
+
 
 

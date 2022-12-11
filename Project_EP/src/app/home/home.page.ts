@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Games } from '../games';
 
 @Component({
   templateUrl: './home.page.html',

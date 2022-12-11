@@ -31,7 +31,7 @@ export class CarouselComponent implements OnInit {
     //  this.games = gameList.results;
     //  console.log(gameList)
     // });
-     this.gamesService.getGame(this.url, {
+     this.gamesService.getGamesAll(this.url, {
       headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
        this.games = gameList.results;
       console.log(this.games)

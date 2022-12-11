@@ -19,13 +19,10 @@ games: Games[] = []
       'X-RapidAPI-Key': '303df10c14msh14901127afe3b8bp121776jsnd0ba57cd245c',
     });
     
-     this.gamesService.getGame(this.url, {
+     this.gamesService.getGamesAll(this.url, {
       headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
        this.games = gameList.results;
-      //  for(let i =0; i < gameList.results.length, i++;){
-      //   if (gameList.results === gameList.results[i])
-      //   i++
-      //  }
+
        console.log(this.games)
     });
   }
