@@ -28,7 +28,8 @@ export class NavbarComponent implements OnInit {
     )
     .subscribe((v) =>{
       this.games = v?.games
-   })
+      console.log(this.games)
+    })
    }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
   ngOnInit(): void {

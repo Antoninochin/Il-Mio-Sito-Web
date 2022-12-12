@@ -51,6 +51,19 @@
 	</div>
 <!-- End Menù Hamburger media query -->
 </div>
-
+<!-- <ng-container *ngIf="games?.length;else notFound;">
+	<div class="grid grid-cols-4">
+		<div *ngFor="let game of games | slice:0:0">
+			<app-carousel>
+				{{game.name}}
+			</app-carousel>
+		</div>
+	</div>
+  </ng-container>
+  <ng-template #notFound>
+	<div>
+		Not Found!
+	</div>
+  </ng-template> -->
 
 
