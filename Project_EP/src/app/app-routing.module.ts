@@ -26,7 +26,15 @@ const routes: Routes = [
     path:'detailsgame',
     component:DetailsgameComponent,
   },
- 
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+  },
 ];
 
 @NgModule({

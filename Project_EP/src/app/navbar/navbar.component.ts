@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { ServiziService } from '../auth/servizi.service';
 import { Users } from '../auth/users';
 import { APIResponse, Games } from '../games';
 import { GamesService } from '../games.service';
@@ -16,25 +17,29 @@ export class NavbarComponent implements OnInit {
   name:any
   user:any
   users:Users[]= []
-  searchForm: FormGroup = new FormGroup({
-    search: new FormControl(''),
-  })
+  // searchForm: FormGroup = new FormGroup({
+  //   search: new FormControl(''),
+  // })
   games: Games[] = []
-  constructor( private router: Router,private gamesService: GamesService) {
-    this.searchForm.get('search')?.valueChanges.pipe(
-      debounceTime(1000),
-      distinctUntilChanged(),
-      switchMap((v)=> this.gamesService.getGame(v))
-    )
-    .subscribe((v) =>{
-      this.games = v?.games
-      console.log(this.games)
-    })
+  constructor( private router: Router,private gamesService: GamesService,private authService: ServiziService) {
+    // this.searchForm.get('search')?.valueChanges.pipe(
+    //   debounceTime(1000),
+    //   distinctUntilChanged(),
+    //   switchMap((v)=> this.gamesService.getGame(v))
+    // )
+    // .subscribe((v) =>{
+    //   this.games = v?.games
+    //   console.log(this.games)
+    // })
    }
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
   ngOnInit(): void {
-    this.name = localStorage.getItem('userLogin')
-    this.user = JSON.parse(this.name)
+    // this.name = localStorage.getItem('userLogin')
+    // this.user = JSON.parse(this.name)
+    if(localStorage.getItem('userLogin')){
+      this.name = localStorage.getItem('userLogin')
+      this.user = JSON.parse(this.name)
+    }
 
     // let headers = new HttpHeaders({
     //   'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
@@ -45,6 +50,9 @@ export class NavbarComponent implements OnInit {
     //    this.games = gameList.results;
     //   console.log(this.games)
     // });
+  }
+  onLogout(){
+    this.authService.logout();
   }
 
   // onSubmit(form: NgForm){

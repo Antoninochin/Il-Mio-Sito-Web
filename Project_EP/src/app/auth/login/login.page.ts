@@ -17,16 +17,18 @@ export class LoginPage implements OnInit {
 
   onSubmit(form: NgForm) {
     this.authService.login(form.value).subscribe(
-      data => {
+      (data) => {
+        console.log(data);
         localStorage.setItem('userLogin', JSON.stringify(data));
         console.log(data);
           this.authService.isLoggedIn = true;
-          this.router.navigate(['/navbar']);
+          this.router.navigate(['/']);
       },
-      err => {
-        console.log(err);
-        this.error = err.error;
-      })
+      // err => {
+      //   console.log(err);
+      //   this.error = err.error;
+      // }
+      )
 
   }
 }

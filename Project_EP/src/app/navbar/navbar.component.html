@@ -4,8 +4,8 @@
 		<img src="../../assets/img/MioLogo.png" alt="Logo">
 		<a href="#navigate" ><i class="bi bi-fire"></i></a>
 	</div>
-	<form class="d-flex" [formGroup]="searchForm"  role="search">
-        <input class="form-control me-2 search-bar" type="search" name="search" formControlName="search" placeholder="Search" value="">
+	<form class="d-flex" role="search"> <!--[formGroup]="searchForm-->
+        <input class="form-control me-2 search-bar" type="search" name="search"  placeholder="Search" value="">  <!--formControlName="search"-->
         <button class="btn search-bar" type="submit">Search</button>
 
 <!-- Start Search-bar media query -->
@@ -51,6 +51,7 @@
 	</div>
 <!-- End Menù Hamburger media query -->
 </div>
+<button (click)="onLogout()">Logout</button>
 <!-- <ng-container *ngIf="games?.length;else notFound;">
 	<div class="grid grid-cols-4">
 		<div *ngFor="let game of games | slice:0:0">

@@ -9,21 +9,27 @@ import { ServiziService } from '../servizi.service';
 })
 export class SignUpPage implements OnInit {
   error = undefined;
+  showAlert = false;
   constructor(private authService: ServiziService, private router: Router) { }
 
   ngOnInit(): void {
   }
   onSubmit(form: NgForm) {
-    this.authService.signUp(form.value).subscribe(
+    this.authService.signUp(form.value)
+    .subscribe(
       (data) => {
-        this.router.navigate(['/login']);
         console.log(data);
+        this.router.navigate(['/login'])
+        this.showAlert = !this.showAlert;
       },
-      (err) => {
-        console.log(err);
-        this.error = err.error;
-      }
-    );
-    form.reset()
+      //  (err) => {
+      //    console.log(err);
+      //     this.error = err.error;     
+      //  }
+      );
+      form.reset()
+  }
+  close() {
+    this.showAlert = !this.showAlert;
   }
 }
