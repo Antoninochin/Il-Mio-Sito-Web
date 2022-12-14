@@ -1,5 +1,16 @@
 <div class="box">
 <form class="container" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div>
+    <p>
+      <ngb-alert
+        [dismissible]="true"
+        *ngIf="showAlert"
+        (closed)="close()"
+      >
+        <strong>Attenzione!</strong> {{error}}
+      </ngb-alert>
+    </p>
+  </div>
     <div class="form-floating  mb-3">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required ngModel />
       <label for="floatingInput">Email address</label>
@@ -15,8 +26,8 @@
     </label>
     </div>
     <div class="column">
-    <button type="submit" class="btn btn-primary">Login</button>
-    <button [routerLink]="['/sign-Up']" type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Login</button>
+    <button [routerLink]="['/sign-up']" type="submit" class="btn btn-primary">
       Register</button>
     </div>
   </form>

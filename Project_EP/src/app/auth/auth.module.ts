@@ -11,5 +11,6 @@ import { RouterLink } from '@angular/router';
 @NgModule({
   declarations: [LoginPage, SignUpPage],
   imports: [CommonModule, HttpClientModule, FormsModule, NgbModule, RouterLink,],
+  exports: [LoginPage, SignUpPage],
 })
 export class AuthModule { }

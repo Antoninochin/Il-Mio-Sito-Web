@@ -16,7 +16,7 @@ import { GamesService } from '../games.service';
 export class NavbarComponent implements OnInit {
   name:any
   user:any
-  users:Users[]= []
+  
   // searchForm: FormGroup = new FormGroup({
   //   search: new FormControl(''),
   // })
@@ -32,11 +32,12 @@ export class NavbarComponent implements OnInit {
     //   console.log(this.games)
     // })
    }
+   users!: any
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
   ngOnInit(): void {
     // this.name = localStorage.getItem('userLogin')
     // this.user = JSON.parse(this.name)
-    if(localStorage.getItem('userLogin')){
+    if(localStorage.getItem('user')){
       this.name = localStorage.getItem('userLogin')
       this.user = JSON.parse(this.name)
     }
@@ -52,7 +53,13 @@ export class NavbarComponent implements OnInit {
     // });
   }
   onLogout(){
-    this.authService.logout();
+   this.authService.logout()
+  //  .subscribe(
+  //   (data)=>{
+  //     this.users
+  //   },
+  //   (error) => console.log(error)
+  //  )
   }
 
   // onSubmit(form: NgForm){

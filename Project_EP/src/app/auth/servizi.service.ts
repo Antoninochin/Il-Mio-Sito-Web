@@ -8,29 +8,31 @@ import { Users } from './users';
   providedIn: 'root'
 })
 export class ServiziService {
-  isLoggedIn = false;
-  user?: Users
+  isLoggedIn = true;
+  users: Users[] = []
   constructor(private http: HttpClient, private router: Router) { }
 
-  isAuthenticated() {
-    return this.isLoggedIn;
-  }
-  signUp(obj: Users) {
-    return this.http.post(`${environment.urlAPI}` + 'sign-up', obj);
+  
+  signup(obj: Users) {
+    return this.http.post(environment.urlAPI + 'users', obj);
   }
 
   login(obj: Users) {
-    return this.http.get(`${environment.urlAPI}users`);
+    return this.http.post(environment.urlAPI + 'users', obj);
   }
-
+  isAuthenticated() {
+    return this.isLoggedIn;
+  }
   // logout(){
   //   this.isLoggedIn = false
   //   localStorage.removeItem('userLogin')
   //   this.user = null
-  //   this.router.navigate(['/login'])
+  //   
   // }
   logout() {
-    return this.http.delete<Users>(`${environment.urlAPI}/users/`)
+  //  return this.http.delete<Users>(environment.urlAPI + 'users/')
+   this.router.navigate(['/login'])
+  this.isLoggedIn = false
+    localStorage.removeItem('user')
   }
-  // this.router.navigate(['/login'])
 }

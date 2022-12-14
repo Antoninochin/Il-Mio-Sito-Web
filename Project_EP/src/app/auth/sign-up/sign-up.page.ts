@@ -15,17 +15,17 @@ export class SignUpPage implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(form: NgForm) {
-    this.authService.signUp(form.value)
+    this.authService.signup(form.value)
     .subscribe(
       (data) => {
         console.log(data);
         this.router.navigate(['/login'])
-        this.showAlert = !this.showAlert;
       },
-      //  (err) => {
-      //    console.log(err);
-      //     this.error = err.error;     
-      //  }
+      (err) => {
+        console.log(err);
+        this.error = err.error;     
+        this.showAlert = !this.showAlert;
+       }
       );
       form.reset()
   }

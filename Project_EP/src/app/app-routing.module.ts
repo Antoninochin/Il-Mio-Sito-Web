@@ -19,7 +19,7 @@ const routes: Routes = [
     component:LoginPage,
   },
   {
-    path:'sign-Up',
+    path:'sign-up',
     component:SignUpPage,
   },
   {
