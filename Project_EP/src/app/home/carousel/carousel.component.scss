@@ -36,3 +36,11 @@ h3{
 .like{
     background-color: red;
 }
+.carousel-indicators{
+    background-color: black;
+}
+@media screen and (max-width:700px)  {
+    .box{
+        flex-wrap: wrap;
+    }
+}

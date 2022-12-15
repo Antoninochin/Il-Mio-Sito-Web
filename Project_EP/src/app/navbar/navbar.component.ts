@@ -21,6 +21,7 @@ export class NavbarComponent implements OnInit {
   //   search: new FormControl(''),
   // })
   games: Games[] = []
+  users: Users[] = []
   constructor( private router: Router,private gamesService: GamesService,private authService: ServiziService) {
     // this.searchForm.get('search')?.valueChanges.pipe(
     //   debounceTime(1000),
@@ -32,16 +33,20 @@ export class NavbarComponent implements OnInit {
     //   console.log(this.games)
     // })
    }
-   users!: any
+
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
   ngOnInit(): void {
-    // this.name = localStorage.getItem('userLogin')
-    // this.user = JSON.parse(this.name)
+
     if(localStorage.getItem('user')){
-      this.name = localStorage.getItem('userLogin')
+      this.name = localStorage.getItem('user')
       this.user = JSON.parse(this.name)
     }
-
+    // if(this.authService.isLoggedIn = true){
+    //   this.authService.getUser(this.name.id).subscribe((data)=>{
+    //     console.log(data)
+    //   })
+    // }
+    
     // let headers = new HttpHeaders({
     //   'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
     //   'X-RapidAPI-Key': '303df10c14msh14901127afe3b8bp121776jsnd0ba57cd245c',
@@ -52,14 +57,9 @@ export class NavbarComponent implements OnInit {
     //   console.log(this.games)
     // });
   }
+  
   onLogout(){
    this.authService.logout()
-  //  .subscribe(
-  //   (data)=>{
-  //     this.users
-  //   },
-  //   (error) => console.log(error)
-  //  )
   }
 
   // onSubmit(form: NgForm){

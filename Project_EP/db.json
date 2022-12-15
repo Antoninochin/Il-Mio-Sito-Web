@@ -1,18 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "nino",
-      "lastName": "nino",
-      "passwor": "12345",
-      "email": "ccc@gmail.com"
-    },
-    {
       "name": "Nino25",
       "lastName": "nino",
       "password": "12345",
-      "email": "ggg@virgilio.it",
-      "id": 2
+      "email": "ccc@gmail.com",
+      "id": 1
     }
   ]
 }

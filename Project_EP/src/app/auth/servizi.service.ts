@@ -23,12 +23,9 @@ export class ServiziService {
   isAuthenticated() {
     return this.isLoggedIn;
   }
-  // logout(){
-  //   this.isLoggedIn = false
-  //   localStorage.removeItem('userLogin')
-  //   this.user = null
-  //   
-  // }
+  getUser(id:number){
+    return this.http.get(environment.urlAPI + 'users/' + id)
+  }
   logout() {
   //  return this.http.delete<Users>(environment.urlAPI + 'users/')
    this.router.navigate(['/login'])

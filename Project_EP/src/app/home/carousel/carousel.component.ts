@@ -14,6 +14,7 @@ import { GamesService } from 'src/app/games.service';
 export class CarouselComponent implements OnInit {
   myLike = document.querySelector(".bttn") as HTMLElement;
   games: Games[] = []
+  screen: any;
   
   
   constructor(private gamesService: GamesService, private activatedRoute:ActivatedRoute) {
@@ -25,17 +26,12 @@ export class CarouselComponent implements OnInit {
       'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
       'X-RapidAPI-Key': '303df10c14msh14901127afe3b8bp121776jsnd0ba57cd245c',
     });
-    // this.gamesService.getGamesAll(this.url, {
-    //   headers: headers,
-    //   }).subscribe((gameList: APIResponse<Games>) =>{
-    //  this.games = gameList.results;
-    //  console.log(gameList)
-    // });
      this.gamesService.getGamesAll(this.url, {
       headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
        this.games = gameList.results;
       console.log(this.games)
     });
+    
   }
   
   like(i:any){
