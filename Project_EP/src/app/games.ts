@@ -7,6 +7,7 @@ export class Games {
     parent_platforms?:Array<ParentPlatform>
     genres?: Array<Genre>;
     rating?:number;
+  includes: any;
 }
 
 

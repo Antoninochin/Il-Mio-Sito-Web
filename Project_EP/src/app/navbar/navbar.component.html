@@ -4,8 +4,8 @@
 		<img src="../../assets/img/MioLogo.png" alt="Logo">
 		<a href="#navigate" ><i class="bi bi-fire"></i></a>
 	</div>
-	<form class="d-flex" role="search"> <!--[formGroup]="searchForm-->
-        <input class="form-control me-2 search-bar" type="search" name="search"  placeholder="Search" value="">  <!--formControlName="search"-->
+	<form class="d-flex" #form="ngForm"  role="search"> <!--[formGroup]="searchForm"-->
+        <input class="form-control me-2 search-bar" type="search" name="search"  (input)="onSearch($event)"  placeholder="Search">  <!--formControlName="search"-->
         <button class="btn search-bar" type="submit">Search</button>
 
 <!-- Start Search-bar media query -->
@@ -31,9 +31,13 @@
 		<a [routerLink]="['login']"><i class="bi bi-person-fill"></i> Login</a>
 	</div>
 	<div ngbNavItem class="display">
+		<a (click)="onLogout()"><i class="bi bi-person-x-fill"></i> Logout</a>
+    </div>
+	<div ngbNavItem class="display">
 		<a [routerLink]="['sign-up']"><i class="bi bi-pencil-square"></i> Register</a>
 	</div>
-	<button id="user" class="mx-3 rounded-circle"></button>
+	
+ <button id="user" class="mx-3 rounded-circle"></button>  <!--{{ user.user.name | slice: 0:1 }} {{ user.user.lastName | slice: 0:1 }} -->
 <!-- Start Menù Hamburger media query -->
 	<div class="row" class="visible">
 		<div class="col">
@@ -44,6 +48,7 @@
 				<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
 					<button ngbDropdownItem><a [routerLink]="['/']">Home</a></button>
 					<button ngbDropdownItem><a [routerLink]="['login']">Login</a></button>
+					<button (click)="onLogout()">Logout</button>
 					<button ngbDropdownItem><a [routerLink]="['/sign-up']">Register</a></button>
 				</div>
 			</div>
@@ -51,20 +56,21 @@
 	</div>
 <!-- End Menù Hamburger media query -->
 </div>
-<button (click)="onLogout()">Logout</button>
-<!-- <ng-container *ngIf="games?.length;else notFound;">
+
+  
+<ng-container *ngIf="games?.length;else notFound;">
 	<div class="grid grid-cols-4">
-		<div *ngFor="let game of games | slice:0:0">
-			<app-carousel>
-				{{game.name}}
-			</app-carousel>
+		<div *ngFor="let game of data">
+			<app-searchgames
+				[game]="game">
+			</app-searchgames>
 		</div>
 	</div>
   </ng-container>
   <ng-template #notFound>
-	<div>
+	<div class="p-2 m-2 border-2 border-blue-200 text-blue-500">
 		Not Found!
 	</div>
-  </ng-template> -->
+  </ng-template>
 
 

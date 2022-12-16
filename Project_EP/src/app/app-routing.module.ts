@@ -4,6 +4,7 @@ import { DetailsgameComponent } from './home/detailsgame/detailsgame.component';
 import { HomePage } from './home/home.page';
 import { LoginPage } from './auth/login/login.page';
 import { SignUpPage } from './auth/sign-up/sign-up.page';
+import { SearchgamesComponent } from './searchgames/searchgames.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path:'detailsgame',
     component:DetailsgameComponent,
+  },
+  {
+    path:'searchgames',
+    component:SearchgamesComponent,
   },
   {
     path: '',
