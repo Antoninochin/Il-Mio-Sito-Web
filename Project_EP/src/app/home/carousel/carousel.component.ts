@@ -1,4 +1,5 @@
 
+import { NgClass } from '@angular/common';
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -12,9 +13,13 @@ import { GamesService } from 'src/app/games.service';
 })
 
 export class CarouselComponent implements OnInit {
-  myLike = document.querySelector(".bttn") as HTMLElement;
+  
   games: Games[] = []
   screen: any;
+  bttn: any;
+  bttn2:number = 0
+  bttn3:number = 0
+  bttn4:number = 0
   
   
   constructor(private gamesService: GamesService, private activatedRoute:ActivatedRoute) {
@@ -34,12 +39,24 @@ export class CarouselComponent implements OnInit {
     
   }
   
-  like(i:any){
-    if(this.myLike !== null){
-      this.myLike.style.backgroundColor = "red"
+  // like(){
+  //   if(this.bttn = document.querySelector('.bttn') as HTMLElement){;
+  //   this.bttn.style.color ='red'
+  //   }else if(this.bttn.style.color='red'){
+  //     this.bttn.style.color ='grey'
+  //   }
+  //   console.log(this.like())
+  // }
+  like(){
+    return this.bttn2++
+
   }
-    console.log(this.like(i))
-   }
-  
+  like2(){
+    return this.bttn3++
+  }
+  like3(){
+    return this.bttn4++
+
+  }
 }
 

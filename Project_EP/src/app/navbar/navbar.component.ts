@@ -19,17 +19,8 @@ export class NavbarComponent implements OnInit {
   games: Games[] = []
   users: Users[] = []
   data:any;
-  //   searchForm: FormGroup = new FormGroup({
-  //    search: new FormControl(''),
-  //  })
   constructor( private router: Router,private gamesService: GamesService,private authService: ServiziService, private activatedRoute: ActivatedRoute) {
-    // this.searchForm.get('search')?.valueChanges.pipe(
-    //   debounceTime(1000),
-    //   distinctUntilChanged(),
-    //   switchMap((v) => this.gamesService.getGame(v)),
-    // ).subscribe((gameList: APIResponse<Games>) =>{
-    //        this.games = gameList.results;
-    // })
+  
    }
 
   private url = 'https://rawg-video-games-database.p.rapidapi.com/games.json'
@@ -46,17 +37,6 @@ export class NavbarComponent implements OnInit {
     // }
     
   }
-  // onSearch(search:string){
-  //   let headers = new HttpHeaders({
-  //     'X-RapidAPI-Host': 'rawg-video-games-database.p.rapidapi.com',
-  //     'X-RapidAPI-Key': '303df10c14msh14901127afe3b8bp121776jsnd0ba57cd245c',
-  //   });
-  //   this.gamesService.getGame(search, {
-  //     headers: headers}).subscribe((gameList: APIResponse<Games>) =>{
-  //      this.games = gameList.results;
-  //     this.router.navigate(['/searchgames'])
-  //   });
-  // }
   onSearch(name:any){
     const keyword = name.target.value;
     const search = this.gamesService.getSearchGame(keyword).then(response =>{
@@ -69,7 +49,4 @@ export class NavbarComponent implements OnInit {
    this.authService.logout()
   }
 
-  // onSubmit(form: NgForm){
-  //   this.router.navigate(['search', form.value.search])
-  // }
 }
