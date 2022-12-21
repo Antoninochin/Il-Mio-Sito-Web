@@ -1,10 +1,12 @@
-
-  <button class="bg-warning rounded m-3 text-white" [routerLink]="['/']">Return</button>
-  <div *ngFor="let game of games | slice:0:20; index as i;">
-    <div class="card mb-3 mx-5" *ngFor="let store of game?.stores| slice:0:1;">
+  <div class="box mx-2 fixed-top">
+  <button class="border-danger border-3 rounded-5 bg-warning " [routerLink]="['/']"><i class="bi bi-arrow-left-short text-dark"></i></button>
+  <button class="border-danger border-3 rounded-5 bg-warning "><a href="#up"><i class="bi bi-arrow-up-short text-dark"></i></a></button>
+  </div>
+  <div id="up" *ngFor="let game of games | slice:0:20; index as i;">
+    <div class="card mb-3 mx-5 my-2" *ngFor="let store of game?.stores| slice:0:1;">
       <div  *ngFor="let platform of game?.parent_platforms| slice:0:1;index as i;">
-        <div class="row g-0" *ngFor="let genre of game?.genres| slice:0:1;">
-          <div class="col-md-5 ">
+        <div class="d-flex g-0" *ngFor="let genre of game?.genres| slice:0:1;">
+          <div class="col-md-4">
             <img src="{{game.background_image}}" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-8" >

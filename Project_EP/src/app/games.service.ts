@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment as env, environment}from 'src/environments/environment';
+import { environment as env}from 'src/environments/environment';
 import { Observable, shareReplay} from 'rxjs';
 import { APIResponse, Games } from './games';
 
@@ -24,7 +24,7 @@ export class GamesService {
 
    getSearchGame(name:string){
     const response = new Promise(resolve =>{
-      this.http.get(`${env.BASE_URL}` + `/games/search?q=${name}`).subscribe(data =>{
+      this.http.get(`${env.BASE_URL}` + `/games?q=${name}`).subscribe(data =>{
         resolve(data);
       }, err =>{
         console.log(err)

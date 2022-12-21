@@ -1,3 +1,6 @@
-body{
-    background: red;
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
 }

@@ -49,7 +49,6 @@ export class CarouselComponent implements OnInit {
   // }
   like(){
     return this.bttn2++
-
   }
   like2(){
     return this.bttn3++

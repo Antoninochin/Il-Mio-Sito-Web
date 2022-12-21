@@ -6,7 +6,7 @@
 	</div>
 	<form class="d-flex" #form="ngForm"  role="search"> <!--[formGroup]="searchForm"-->
         <input class="form-control me-2 search-bar" type="search" name="search"  (input)="onSearch($event)"  placeholder="Search">  <!--formControlName="search"-->
-        <button class="btn search-bar" type="submit">Search</button>
+        <button  class="btn search-bar" type="submit">Search</button>
 
 <!-- Start Search-bar media query -->
 		<div class="row search" >
@@ -37,7 +37,7 @@
 		<a [routerLink]="['sign-up']"><i class="bi bi-pencil-square"></i> Register</a>
 	</div>
 	
- <button id="user" class="mx-3 rounded-circle"></button>  <!--{{ user.user.name | slice: 0:1 }} {{ user.user.lastName | slice: 0:1 }} -->
+ <!-- <button id="user" class="mx-3 rounded-circle"></button>  {{ user.user.name | slice: 0:1 }} {{ user.user.lastName | slice: 0:1 }} -->
 <!-- Start Menù Hamburger media query -->
 	<div class="row" class="visible">
 		<div class="col">
@@ -58,19 +58,5 @@
 </div>
 
   
-<ng-container *ngIf="games?.length;else notFound;">
-	<div class="grid grid-cols-4">
-		<div *ngFor="let game of data">
-			<app-searchgames
-				[game]="game">
-			</app-searchgames>
-		</div>
-	</div>
-  </ng-container>
-  <ng-template #notFound>
-	<div class="p-2 m-2 border-2 border-blue-200 text-blue-500">
-		Not Found!
-	</div>
-  </ng-template>
 
 

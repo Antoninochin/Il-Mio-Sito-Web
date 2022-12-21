@@ -41,8 +41,11 @@ export class NavbarComponent implements OnInit {
     const keyword = name.target.value;
     const search = this.gamesService.getSearchGame(keyword).then(response =>{
       this.data = response;
-      console.log(this.data)
     });
+    this.router.navigate(['/searchgames']);
+    console.log(search)
+    console.log(this.data)
+    console.log(keyword)
   }
   
   onLogout(){
