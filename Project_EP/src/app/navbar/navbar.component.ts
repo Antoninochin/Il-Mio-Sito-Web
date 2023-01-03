@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
   games: Games[] = []
   users: Users[] = []
   data:any;
+  isLoggedIn = true;
   constructor( private router: Router,private gamesService: GamesService,private authService: ServiziService, private activatedRoute: ActivatedRoute) {
   
    }
@@ -40,8 +41,7 @@ export class NavbarComponent implements OnInit {
   onSearch(name:any){
     const keyword = name.target.value;
     const search = this.gamesService.getSearchGame(keyword).then(response =>{
-      this.data = response;
-    });
+      this.data = response;});
     this.router.navigate(['/searchgames']);
     console.log(search)
     console.log(this.data)
